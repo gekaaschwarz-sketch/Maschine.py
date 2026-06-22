@@ -1,0 +1,22 @@
+[
+    {
+        "ID": "HH-99",
+        "Fahrer_in": "Maren",
+        "Last": 5000
+    },
+    {
+        "ID": "HH-02",
+        "Fahrer_in": "Yvonne",
+        "Last": 4
+    },
+    {
+        "ID": "HH-03",
+        "Fahrer_in": "Stefan",
+        "Last": 3800
+    },
+    {
+        "ID": "HH-04",
+        "Fahrer_in": "Hannes",
+        "Last": 2000
+    }
+]

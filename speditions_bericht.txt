@@ -1,0 +1,20 @@
+=========================================
+   OFFIZIELER BERICHT: SPEDITION HAMBURG
+=========================================
+
+🚛 LKW-ID: HH-99
+👤 Fahrer*in: Maren
+⚖️ Aktuelle Last: 5000 kg
+-----------------------------------------
+🚛 LKW-ID: HH-02
+👤 Fahrer*in: Yvonne
+⚖️ Aktuelle Last: 4 kg
+-----------------------------------------
+🚛 LKW-ID: HH-03
+👤 Fahrer*in: Stefan
+⚖️ Aktuelle Last: 3800 kg
+-----------------------------------------
+🚛 LKW-ID: HH-04
+👤 Fahrer*in: Hannes
+⚖️ Aktuelle Last: 2000 kg
+-----------------------------------------
