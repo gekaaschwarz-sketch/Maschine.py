@@ -1,0 +1,6 @@
+# Lokale Datenbanken blockieren
+*.db
+
+# Logbücher und temporäre Textberichte ignorieren
+*.txt
+*.log
