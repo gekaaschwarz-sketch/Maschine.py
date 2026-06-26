@@ -4,3 +4,4 @@
 # Logbücher und temporäre Textberichte ignorieren
 *.txt
 *.log
+*.csv
