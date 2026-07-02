@@ -12,7 +12,7 @@ try:
 
         os.remove(backup_datei)
 
-        print(f"\n🧹 SUCCESS: '{backup_datei}'")
+        print(f"\n🧹 SUCCESS: '{backup_datei}' wurde erfolgreich gelöscht!")
         print("💾 Der Speicherplatz wurde für das nächste Backup freigegeben.")
     else:
         print(f"ℹ️ INFO: Keine alte Sicherungskopie vorhanden. Der Tisch ist sauber.")
@@ -20,4 +20,4 @@ try:
 except Exception as fehler:
     print(f"🚨 KRITISCHER DATEI-FEHLER: {fehler}")
 
-print("\n⚙️ Bereinigungs-Modul abgeschlossen: Festplatte optimierer.")
+print("\n⚙️ Bereinigungs-Modul abgeschlossen: Festplatte optimiert.")
