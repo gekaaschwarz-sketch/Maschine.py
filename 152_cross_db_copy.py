@@ -16,7 +16,7 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
 
         cursor.execute("""
             CREATE TABLE main.kunden_wiederhergestellt AS
-            SELECT id, name, zugeordneter_lkw FROM archiv.system_log_historie;
+            SELECT id, aktion, status FROM archiv.system_log_historie;
         """)
 
         verbindung.commit()
