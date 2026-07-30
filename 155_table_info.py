@@ -9,7 +9,7 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
 
     print("\n⚡️ Starte forensische Struktur-Analyse der Tabelle 'kunden'...")
     try:
-        cursor.execute("PRAGMA table_info(kunden);")
+        cursor.execute("PRAGMA table_info(lkw_flotte);")
         spalten_dna = cursor.fetchall()
         
         print("\n📋️ Offizieller DNA-Bericht der Tabellen_Struktur:")
