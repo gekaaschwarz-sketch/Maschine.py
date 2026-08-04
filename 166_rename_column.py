@@ -18,7 +18,7 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
         neue_dna = cursor.fetchall()
 
         for spalte in neue_dna:
-            print(f"📦️ Spalte: {spalte[1]} | Typ: {spalte[2]} | Standartwert: {spalte[4]}")
+            print(f"📦️ Spalte: {spalte[1]} | Typ: {spalte[2]} | Standartwerd: {spalte[4]}")
 
     except sqlite3.Error as fehler:
         print(f"🚨 FEHLER BEIM SPALTEN-RENAME: {fehler}")
