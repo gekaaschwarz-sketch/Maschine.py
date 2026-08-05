@@ -15,9 +15,9 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
         daten = cursor.fetchall()
         
         print("\n📋 Offizieller Sicherheits-Bericht:")
-        print("-" * 45)
+        print("-" * 75)
         print(f"📖 Shared-Lock aktiv: Daten-Zustand für Bericht eingefroren.")
-        print("-" * 45)
+        print("-" * 75)
         print("💎 SUCCESS: Lese-Sperre erfolgreich im laufenden Betrieb verankert!")
         
         verbindung.commit()
