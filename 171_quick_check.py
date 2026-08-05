@@ -1,8 +1,8 @@
 import sqlite3
 
-print("\n==========================================")
+print("\n=========================================")
 print("--- 🛡️ AUTOMATISCHER SQL-SCHNELL-CHECK ---")
-print("==========================================")
+print("=========================================")
 
 with sqlite3.connect("speditions_tresor.db") as verbindung:
     cursor = verbindung.cursor()
