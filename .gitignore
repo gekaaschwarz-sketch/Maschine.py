@@ -1,7 +1,9 @@
 # Lokale Datenbanken blockieren
 *.db
 
-# Logbücher und temporäre Textberichte ignorieren
+# Berichte ignorieren
 *.txt
 *.log
 *.csv
+kunden_bereitstellung.json
+
