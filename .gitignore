@@ -8,3 +8,4 @@
 kunden_bereitstellung.json
 
 __pycache__/
+.coverage
