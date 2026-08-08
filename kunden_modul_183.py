@@ -16,5 +16,17 @@ def kunde_hinzufuegen(db_pfad, name):
             raise ValueError(f"Kunde '{name}' existiert bereits!")
 
 
+def kunde_suchen(db_pfad, name):
+    """
+    Sucht einen Kunden anhand des Namens.
+    Gibt ein Tupel (id, name) zurück, wenn gefunden.
+    Gibt None zurück, wenn kein Treffer existiert - kein Fehler!
+    """
+    with sqlite3.connect(db_pfad) as verbindung:
+        cursor = verbindung.cursor()
+        cursor.execute("SELECT id, name FROM kunden WHERE name = ?", (name,))
+        ergebnis = cursor.fetchone()
+        return ergebnis
+
 if __name__ == "__main__":
-    print("Dieses Modul stellt kunde_hinzufuegen() bereit - für Nutzung im Hauptprogramm importieren.")
+    print("Dieses Modul stellt kunde_hinzufuegen() und kunde_suchen() bereit - für Nutzung im Hauptprogramm importieren.")
