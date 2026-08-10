@@ -9,3 +9,4 @@ kunden_bereitstellung.json
 
 __pycache__/
 .coverage
+!LUECKEN_LISTE.txt
