@@ -1,4 +1,4 @@
-# 005_fehlerschutz.py
+# Wie 004, aber mit try/except gegen ungueltige (nicht-numerische) Eingaben abgesichert
 print("--- Sicherer Umrechner ---")
 eingabe = input("Gewicht in Pfund eingeben: ")
 

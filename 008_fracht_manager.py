@@ -1,4 +1,4 @@
-# 008_fracht_manager.py
+# Baut interaktiv eine Frachtliste auf, bis der Nutzer 'fertig' eingibt
 print("--- Interaktive Frachtliste ---")
 meine_fracht = [] # Eine leere Liste zum Start
 

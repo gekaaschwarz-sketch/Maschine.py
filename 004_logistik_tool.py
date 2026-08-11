@@ -1,4 +1,4 @@
-# 004_logistik_tool.py
+# Rechnet ein eingegebenes Gewicht von Pfund in Kilogramm um
 print("--- Logistik-Tool: Pfund in KG umrechnen ---")
 
 # Abfrage

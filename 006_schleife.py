@@ -1,4 +1,4 @@
-# 006_schleife.py
+# Wandelt Pfund in Kilogramm um, wiederholt sich per while-Schleife bis Eingabe 'ende'
 print("--- Der unermüdliche Umrechner ---")
 
 while True:

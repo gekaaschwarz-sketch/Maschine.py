@@ -1,4 +1,4 @@
-# 009_liste_loeschen.py
+# Entfernt ein vom Nutzer gewaehltes Gut aus der Frachtliste, falls vorhanden
 fracht = ['Holz', 'Stahl', 'Papier']
 print('Aktuelle Fracht: ' + str(fracht))
 

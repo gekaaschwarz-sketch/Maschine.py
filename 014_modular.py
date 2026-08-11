@@ -1,4 +1,4 @@
-# 014_modular.py
+# Definiert eine Funktion, die den LKW-Ladungsstatus formatiert anzeigt
 
 # 1. Funktion definieren
 def zeige_status(liste):

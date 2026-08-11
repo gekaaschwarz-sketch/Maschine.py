@@ -1,4 +1,4 @@
-# 003_entscheidung.py
+# Fragt Plus oder Minus ab und rechnet zwei eingegebene Zahlen entsprechend
 print("--- Rechnen-Wahl ---")
 wahl = input("Willst du (P)lus oder (M)inus rechnen? ")
 z1 = int(input("Zahl 1: "))

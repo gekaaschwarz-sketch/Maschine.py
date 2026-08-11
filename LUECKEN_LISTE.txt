@@ -1,15 +1,3 @@
-003_entscheidung.py
-004_logistik_tool.py
-005_fehlerschutz.py
-006_schleife.py
-007_listen.py
-008_fracht_manager.py
-009_liste_loeschen.py
-010_speichern.py
-013_funktionen.py
-014_modular.py
-015_sicher_löschen.py
-016_suche.py
 017_gewichte.py
 018_warnung.py
 019_gesamtgewicht.py

@@ -1,4 +1,4 @@
-# 013_funktionen.py
+# Definiert eine Begruessungsfunktion, die den eingegebenen Namen anspricht
 
 # Wir definieren eine Funktion (einen Baukasten)
 def begrüßung(name):

@@ -1,4 +1,4 @@
-# 010_speichern.py
+# Schreibt Frachtdaten in eine Textdatei und liest sie anschliessend wieder aus
 datei_name = 'lager.txt'
 
 # 1. Daten in die Datei SCHREIBEN

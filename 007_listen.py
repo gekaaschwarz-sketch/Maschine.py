@@ -1,4 +1,4 @@
-# 007_listen.py
+# Legt eine Frachtliste an, fuegt ein Gut hinzu und zeigt Liste sowie erstes Element
 print("--- Deine Frachtliste ---")
 
 # Wir erstellen eine Liste mit drei Gütern

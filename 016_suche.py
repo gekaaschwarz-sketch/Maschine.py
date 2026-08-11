@@ -1,4 +1,4 @@
-# 016_suche.py
+# Sucht ein Gut in der Frachtliste und gibt dessen Position aus, falls vorhanden
 
 def fracht_suchen(liste, gesuchter_artikel):
     if gesuchter_artikel in liste:

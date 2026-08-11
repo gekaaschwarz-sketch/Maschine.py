@@ -5,20 +5,20 @@ Dieses Dokument wurde vollautomatisch generiert.
 | Quellcode-Datei | Funktion / Terminal-Überschrift |
 | :--- | :--- |
 | `002_taschenrechner.py` | Abfrage der Zahlen |
-| `003_entscheidung.py` | 003_entscheidung.py |
-| `004_logistik_tool.py` | 004_logistik_tool.py |
-| `005_fehlerschutz.py` | 005_fehlerschutz.py |
-| `006_schleife.py` | 006_schleife.py |
-| `007_listen.py` | 007_listen.py |
-| `008_fracht_manager.py` | 008_fracht_manager.py |
-| `009_liste_loeschen.py` | 009_liste_loeschen.py |
-| `010_speichern.py` | 010_speichern.py |
+| `003_entscheidung.py` | Fragt Plus oder Minus ab und rechnet zwei eingegebene Zahlen entsprechend |
+| `004_logistik_tool.py` | Rechnet ein eingegebenes Gewicht von Pfund in Kilogramm um |
+| `005_fehlerschutz.py` | Wie 004, aber mit try/except gegen ungueltige (nicht-numerische) Eingaben abgesichert |
+| `006_schleife.py` | Wandelt Pfund in Kilogramm um, wiederholt sich per while-Schleife bis Eingabe 'ende' |
+| `007_listen.py` | Legt eine Frachtliste an, fuegt ein Gut hinzu und zeigt Liste sowie erstes Element |
+| `008_fracht_manager.py` | Baut interaktiv eine Frachtliste auf, bis der Nutzer 'fertig' eingibt |
+| `009_liste_loeschen.py` | Entfernt ein vom Nutzer gewaehltes Gut aus der Frachtliste, falls vorhanden |
+| `010_speichern.py` | Schreibt Frachtdaten in eine Textdatei und liest sie anschliessend wieder aus |
 | `011_auto_laden.py` | Prüfen, ob die Datei überhaupt existiert |
 | `012_super_manager.py` | 1. AUTOMATISCH LADEN |
-| `013_funktionen.py` | 013_funktionen.py |
-| `014_modular.py` | 014_modular.py |
-| `015_sicher_löschen.py` | 015_sicher_löschen.py |
-| `016_suche.py` | 016_suche.py |
+| `013_funktionen.py` | Definiert eine Begruessungsfunktion, die den eingegebenen Namen anspricht |
+| `014_modular.py` | Definiert eine Funktion, die den LKW-Ladungsstatus formatiert anzeigt |
+| `015_sicher_löschen.py` | Loescht ein Gut aus der Fracht erst nach expliziter Bestaetigung durch den Nutzer |
+| `016_suche.py` | Sucht ein Gut in der Frachtliste und gibt dessen Position aus, falls vorhanden |
 | `017_gewichte.py` | 017_gewichte.py |
 | `018_warnung.py` | 018_warnung.py |
 | `019_gesamtgewicht.py` | 019_gesamtgewicht.py |
@@ -171,4 +171,5 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `179_db_export_csv.py` | 📊 AUTOMATISIERTER CO2-CSV-EXPORT |
 | `180_integrity_check.py` | 🔍 AUTOMATISIERTER DATENBANK-GESUNDHEITSCHECK |
 | `189_generate_inventory.py` | 📋 AUTOMATISCHES PROJEKT-INVENTAR |
+| `190_find_gaps.py` | 🔎 LÜCKEN-FINDER IM PROJEKT-INVENTAR |
 | `kunden_modul_183.py` | Keine Beschreibung extrahierbar. |

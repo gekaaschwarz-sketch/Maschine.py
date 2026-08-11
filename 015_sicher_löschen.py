@@ -1,4 +1,4 @@
-# 015_sicher_löschen.py
+# Loescht ein Gut aus der Fracht erst nach expliziter Bestaetigung durch den Nutzer
 
 def sicher_entladen(fracht_liste, artikel):
     print("ACHTUNG: Soll " + artikel + " wirklich gelöscht werden?")
