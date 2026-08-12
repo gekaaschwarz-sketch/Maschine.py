@@ -19,12 +19,12 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `014_modular.py` | Definiert eine Funktion, die den LKW-Ladungsstatus formatiert anzeigt |
 | `015_sicher_löschen.py` | Loescht ein Gut aus der Fracht erst nach expliziter Bestaetigung durch den Nutzer |
 | `016_suche.py` | Sucht ein Gut in der Frachtliste und gibt dessen Position aus, falls vorhanden |
-| `017_gewichte.py` | ⚖️ GEWICHTSKONTROLLE: ARTIKEL-INDEX-ABGLEICH FÜR DIE LADELISTE |
-| `018_warnung.py` | ⚠️ SICHERHEITS-CHECK: AUTOMATISCHE GEWICHTS-SCHWELLENWERT-WARNUNG |
-| `019_gesamtgewicht.py` | ❌ LADEPROTOKOLL: GESAMTGEWICHTS-BERECHNUNG MIT ÜBERLADUNGS-SCHUTZ |
-| `020_zoll_rechner.py` | 💶 ZOLL-ABRECHNUNG: AUTOMATISIERTE STEUERSATZ-KALKULATION |
-| `021_sortieren.py` | 📊 DATA-SORTING: ARTIKEL-SORTIERUNG NACH GEWICHTS-PRIORITÄT |
-| `022_suche_plus.py` | 🔎 POSITIONSSUCHE: DETAIL-RECHERCHE INNERHALB DER LKW-FRACHT |
+| `017_gewichte.py` | Sucht ein Gut in der Liste und gibt das zugehoerige Gewicht ueber den gemeinsamen Index aus |
+| `018_warnung.py` | Prueft das Gewicht eines Gutes und warnt, wenn es die 1000-kg-Grenze |
+| `019_gesamtgewicht.py` | Summiert das Gesamtgewicht der Fracht und stoppt bei Ueberladung ueber 4000 |
+| `020_zoll_rechner.py` | Berechnet den Gesamtzoll aus Frachtgewicht und einem festen Zollsatz pro Kilo |
+| `021_sortieren.py` | Sortiert eine Gewichtsliste einmal aufsteigend und einmal absteigend |
+| `022_suche_plus.py` | Sucht ein Gut in der Fracht und gibt bei Erfolg zusaetzlich dessen Position aus |
 | `023_entladen.py` | Der magische Befehl zum Leeren |
 | `024_sperre.py` | Test |
 | `025_benutzerfreundlich.py` | .upper() macht aus 'ja', 'Ja' oder 'jA' immer 'JA' |
