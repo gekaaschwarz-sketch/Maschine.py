@@ -1,11 +1,12 @@
-# 019_gesamtgewicht.py
+# Summiert das Gesamtgewicht der Fracht und stoppt bei Ueberladung ueber 4000
+print("--- ❌ LADEPROTOKOLL: GESAMTGEWICHTS-BERECHNUNG MIT ÜBERLADUNGS-SCHUTZ ---")
+
 fracht = ["Holz", "Stahl", "Papier", "Glas"]
 gewichte = [1500, 2500, 150, 400]
 
 def lkw_kontrolle(artikel, zahlen):
     gesamt = sum(zahlen) # Hier passiert die Magie!
 
-    print("--- LADEPROTOKOLL ---")
     print("Anzahl der Artikel: " + str(len(artikel)))
     print("Gesamtgewicht: " + str(gesamt) + " kg")
 

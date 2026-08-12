@@ -1,4 +1,6 @@
-# 021_sortieren.py
+# Sortiert eine Gewichtsliste einmal aufsteigend und einmal absteigend
+print("--- 📊 DATA-SORTING: ARTIKEL-SORTIERUNG NACH GEWICHTS-PRIORITÄT ---")
+
 gewichte = [1500, 2500, 150, 400, 3000]
 
 print("Originale Liste: " + str(gewichte))

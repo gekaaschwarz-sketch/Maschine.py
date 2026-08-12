@@ -1,4 +1,6 @@
-# 018_warnung.py
+# Prueft das Gewicht eines Gutes und warnt, wenn es die 1000-kg-Grenze
+print("--- ⚠️ SICHERHEITS-CHECK: AUTOMATISCHE GEWICHTS-SCHWELLENWERT-WARNUNG ---")
+
 fracht = ["Hol", "Stahl", "Papir"]
 gewichte = [500, 2500, 150]
 
@@ -17,6 +19,5 @@ def fracht_check(artikel_liste, gewicht_liste, gesuchter_artikel):
     else:
         print("Fehler: Artikel nicht gefunden.")
 
-print("--- Sichercheits-Check ---")
 suche = input("Welches Gut soll geprüft werden? ")
 fracht_check(fracht, gewichte, suche)

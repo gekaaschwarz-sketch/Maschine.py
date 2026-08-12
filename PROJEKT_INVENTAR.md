@@ -19,30 +19,30 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `014_modular.py` | Definiert eine Funktion, die den LKW-Ladungsstatus formatiert anzeigt |
 | `015_sicher_löschen.py` | Loescht ein Gut aus der Fracht erst nach expliziter Bestaetigung durch den Nutzer |
 | `016_suche.py` | Sucht ein Gut in der Frachtliste und gibt dessen Position aus, falls vorhanden |
-| `017_gewichte.py` | 017_gewichte.py |
-| `018_warnung.py` | 018_warnung.py |
-| `019_gesamtgewicht.py` | 019_gesamtgewicht.py |
-| `020_zoll_rechner.py` | 020_zoll_rechner.py |
-| `021_sortieren.py` | 021_sortieren.py |
-| `022_suche_plus.py` | 022_suche_plus.py |
-| `023_entladen.py` | 023_entladen.py |
-| `024_sperre.py` | 024_sperre.py |
-| `025_benutzerfreundlich.py` | 025_benutzerfrundlich.py |
-| `026_woerterbuch.py` | 026_woerterbuch.py |
-| `027_lager_update.py` | 027_lager_update.py |
-| `028_lager_loeschen.py` | 028_lager_loeschen.py |
-| `029_lager_wert.py` | 029_lager_wert.py |
-| `030_lastverteilung.py` | 030_lastverteilung.py |
-| `031_lvp_iteraktiv.py` | 031_lvp_iteraktiv.py |
-| `032_lvp_warnung.py` | 032_lvp_warnung.py |
-| `033_optimierer.py` | 033_optimierer.py |
-| `034_airbag.py` | 034_airbag.py |
-| `035_endlos_check.py` | 035_endlos_check.py |
-| `036_lvp_profi.py` | 036_lvp_profi.py |
-| `037_protokol.py` | 037_protokoll.py |
+| `017_gewichte.py` | ⚖️ GEWICHTSKONTROLLE: ARTIKEL-INDEX-ABGLEICH FÜR DIE LADELISTE |
+| `018_warnung.py` | ⚠️ SICHERHEITS-CHECK: AUTOMATISCHE GEWICHTS-SCHWELLENWERT-WARNUNG |
+| `019_gesamtgewicht.py` | ❌ LADEPROTOKOLL: GESAMTGEWICHTS-BERECHNUNG MIT ÜBERLADUNGS-SCHUTZ |
+| `020_zoll_rechner.py` | 💶 ZOLL-ABRECHNUNG: AUTOMATISIERTE STEUERSATZ-KALKULATION |
+| `021_sortieren.py` | 📊 DATA-SORTING: ARTIKEL-SORTIERUNG NACH GEWICHTS-PRIORITÄT |
+| `022_suche_plus.py` | 🔎 POSITIONSSUCHE: DETAIL-RECHERCHE INNERHALB DER LKW-FRACHT |
+| `023_entladen.py` | Der magische Befehl zum Leeren |
+| `024_sperre.py` | Test |
+| `025_benutzerfreundlich.py` | .upper() macht aus 'ja', 'Ja' oder 'jA' immer 'JA' |
+| `026_woerterbuch.py` | Ein Dictionary nutzt geschweifte Klammer { } |
+| `027_lager_update.py` | Ein neues Gut hinzufügen |
+| `028_lager_loeschen.py` | Ein Gut gezielt löschen |
+| `029_lager_wert.py` | .values() holt nur die Zahlen aus dem Dictionary |
+| `030_lastverteilung.py` | Daten: [Gewicht_kg, Abstand_von_vorn_meter] |
+| `031_lvp_iteraktiv.py` | LVP SCHNEL-CHECK |
+| `032_lvp_warnung.py` | LVP SICHERHEITS-CHECK |
+| `033_optimierer.py` | POSITIONS-OPTIMIERER |
+| `034_airbag.py` | SICHERER GEWICHTS-CHECK |
+| `035_endlos_check.py` | Start |
+| `036_lvp_profi.py` | Das Hauptprogramm |
+| `037_protokol.py` | Test |
 | `038_final_check.py` | 1. Sicherheits-Eingabe |
-| `039_log_lesen.py` | 039_log_lesen.py |
-| `040_log_limit.py` | 040_log_limit.py |
+| `039_log_lesen.py` | DIGITALE LOGBUCH-AUSGABE |
+| `040_log_limit.py` | NEUESTE LOG-EINTRÄGE |
 | `041_logik_check.py` | Test |
 | `042_universal_check.py` | Test für die LKW-Länge (zwischen 5m und 18.75) |
 | `043_sicheres_log.py` | Die Speicher-Funktion |
@@ -50,9 +50,9 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `045_json_load.py` | FRACHTBRIEF GELADEN |
 | `046_json_update.py` | 1. Datei einlesen |
 | `047_ip_check.py` | SYSTEM-SICHERCHEITS-CHECK |
-| `048_flotte.py` | 048_flotte.py |
-| `049_flotten_gewicht.py` | 049_flotten_gewicht.py |
-| `050_jubilaeum.py` | 050_jubilaeum.py |
+| `048_flotte.py` | Eine Liste mit drei LKW-Datensätzen |
+| `049_flotten_gewicht.py` | FLOTTEN-ANALYSE |
+| `050_jubilaeum.py` | Den schwersten LKW finden |
 | `051_flotte_save.py` | Start |
 | `052_flotte_load.py` | 🚛️ FLOTTEN-STATUS AKTUEL |
 | `053_flotte_add.py` | 1. Bestehende Datenbank laden |
@@ -62,8 +62,8 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `057_kombi_check.py` | Funktion 1: Namens-Check |
 | `058_id_schutz.py` | Wir prüfen jede vorhandene ID in der Liste |
 | `059_lkw_loeschen.py` | Wir suchen den LKW mit der passenden ID |
-| `060_hauptmenue.py` | --- HAUPTPROGRAMM --- |
-| `061_menue_loeschen.py` | Keine Beschreibung extrahierbar. |
+| `060_hauptmenue.py` | \n 🚛️ AKTUELLE FLOTTE |
+| `061_menue_loeschen.py` | \n 🚛️ AKTUELLE FLOTTE |
 | `062_menue_add.py` | Wächter: Namens-Validierung |
 | `063_final_term.py` | Wächter: Namens-Schutz |
 | `064_schleifen_fix.py` | Eine neue Liste bauen, die nur die LKWs enthält, die NICHT gelöscht werden sollen |
@@ -84,7 +84,7 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `079_sqlite_start.py` | SQLITE-DATENBANK-TRESOR STARTEN |
 | `080_tabelle_bau.py` | SQL-TABELLENSTRUKTUR ERSTELLEN |
 | `081_daten_rein.py` | LKW-DATEN IN TRESOR LADEN |
-| `082_daten_auslesen.py` | Keine Beschreibung extrahierbar. |
+| `082_daten_auslesen.py` | \n 🗄️ SQL-DATENBANK: AKTUELLE FLOTTE |
 | `083_daten_loeschen.py` | LKW AUS TRESOR LÖSCHEN |
 | `084_daten_update.py` | LKW-UPDATE IM TRESOR AKTUALISIEREN |
 | `085_kontrolle.py` | FINALER SQL-TRESOR CHECK |

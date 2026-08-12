@@ -1,4 +1,5 @@
-# 017_gewichte.py
+# Sucht ein Gut in der Liste und gibt das zugehoerige Gewicht ueber den gemeinsamen Index aus
+print("--- ⚖️ GEWICHTSKONTROLLE: ARTIKEL-INDEX-ABGLEICH FÜR DIE LADELISTE ---")
 
 # Zwei Listen, die zusammengehören
 fracht = ["Holz", "Stahl", "Papier"]
@@ -14,6 +15,5 @@ def gewicht_prüfen(artikel_liste, gewicht_liste, gesuchter_artikel):
     else:
         print("Artikel nicht auf der Ladeliste.")
 
-print("--- Gewichtskontrolle ---")
 suche = input("Welches Gut wigen? ")
 gewicht_prüfen(fracht, gewichte, suche)

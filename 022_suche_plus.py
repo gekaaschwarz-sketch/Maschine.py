@@ -1,8 +1,9 @@
-# 022_suche_plus.py
+# Sucht ein Gut in der Fracht und gibt bei Erfolg zusaetzlich dessen Position aus
+print("--- 🔎 POSITIONSSUCHE: DETAIL-RECHERCHE INNERHALB DER LKW-FRACHT ---")
+
 fracht = ["Holz", "Stahl", "Papier", "Glas"]
 
 def detail_suche(liste, gesuchter_artikel):
-    print("--- Suche läuft ---")
     if gesuchter_artikel in liste:
         platz = liste.index(gesuchter_artikel)
         print("Erfolg! '" + gesuchter_artikel + "' gefunden.")

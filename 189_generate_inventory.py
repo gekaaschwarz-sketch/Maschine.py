@@ -16,7 +16,6 @@ try:
     relevante_dateien = []
     
     for datei in alle_dateien:
-        # Wir nehmen nummerierte Lektionen UND das produktive Kundenmodul auf
         if datei.endswith(".py") and (datei[:3].isdigit() or datei.startswith("kunden_modul")):
             relevante_dateien.append(datei)
             
@@ -33,24 +32,24 @@ try:
             beschreibung = "Keine Beschreibung extrahierbar."
             try:
                 with open(datei_name, "r", encoding="utf-8") as f:
-                    # Wir scannen die ersten 15 Zeilen nach einer echten Überschrift
                     for _ in range(15):
                         zeile = f.readline()
                         if not zeile:
                             break
                         zeile = zeile.strip()
                         
-                        # Wenn wir dein print("--- ... ---") finden, extrahieren wir den Inhalt!
-                        if 'print("---' in zeile or "print('---" in zeile:
-                            # Bereinigt den String von print-Klammern und Strichen
+                        # 1. PRIORITÄT: Suche nach deinem echten Print-Befehl
+                        if "print(" in zeile and "---" in zeile:
                             inhalt = zeile.replace('print("', '').replace('")', '')
                             inhalt = inhalt.replace("print('", "").replace("')", "")
                             beschreibung = inhalt.replace("---", "").strip()
                             break
-                        # Alternative: Wir nutzen einen klassischen Kopf-Kommentar, falls kein Print da ist
+                        
+                        # 2. PRIORITÄT: Nutze Kommentare, ABER ignoriere stumpfe Dateinamen (.py)!
                         elif zeile.startswith("#") and not zeile.startswith("#!") and "=================" not in zeile:
-                            beschreibung = zeile.lstrip("# ").strip()
-                            break
+                            if not zeile.strip().endswith(".py"):
+                                beschreibung = zeile.lstrip("# ").strip()
+                                break
             except Exception:
                 beschreibung = "🚨 Fehler beim Einlesen der Datei."
                 
