@@ -1,4 +1,4 @@
-# 034_airbag.py
+# Fragt ein Gewicht ab und faengt ungueltige (nicht-numerische) Eingaben per try/except ab
 
 def sichere_eingabe():
     print("--- SICHERER GEWICHTS-CHECK ---")

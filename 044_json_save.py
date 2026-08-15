@@ -1,3 +1,4 @@
+# Speichert einen Frachtdatensatz als JSON-Datei (frachtbrief.json)
 import json # Das neue Werkzeug laden
 
 # Unsere Frachtdaten als Dictionary

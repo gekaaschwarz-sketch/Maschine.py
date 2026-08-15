@@ -1,3 +1,4 @@
+# Fuegt einen neuen LKW hinzu, mit Namens-Validierung und Schutz vor doppelten IDs
 import json
 
 # Wächter 1: Namens-Schutz

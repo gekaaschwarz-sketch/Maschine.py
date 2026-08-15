@@ -1,4 +1,4 @@
-# 025_benutzerfrundlich.py
+# Leert die Fracht nach Bestaetigung, wobei .upper() Gross-/Kleinschreibung bei der Eingabe ignoriert
 fracht = ["Holz", "Stahl", "Papier"]
 
 def smart_leeren(liste):

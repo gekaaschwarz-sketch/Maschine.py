@@ -1,3 +1,4 @@
+# Erweitert das SQL-Hauptmenue um das Einfuegen eines neuen LKW in die Datenbank
 import sqlite3
 
 while True:

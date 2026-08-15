@@ -1,3 +1,4 @@
+# Berechnet die Hinterachslast per sicherer Eingabefunktion und protokolliert das Ergebnis im Logbuch
 import datetime
 
 # 1. Sicherheits-Eingabe

@@ -1,3 +1,4 @@
+# Fragt einen Wert innerhalb eines Min/Max-Bereichs ab, hier genutzt fuer die LKW-Laenge (5 bis 18.75 m)
 def hole_zahl_im_bereich(name, minimum, maximum):
     while True:
         try:

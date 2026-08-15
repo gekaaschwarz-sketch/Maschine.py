@@ -1,4 +1,4 @@
-# 050_jubilaeum.py
+# Berechnet Durchschnittslast der Flotte und ermittelt den LKW mit der groessten Last
 
 flotte = [
     {"ID": "HH-01", "Fahrer_in": "Valentin", "Last": 2500},

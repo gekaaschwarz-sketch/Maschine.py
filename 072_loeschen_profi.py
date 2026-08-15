@@ -1,3 +1,4 @@
+# Loescht einen LKW erst nach expliziter Ja/Nein-Bestaetigung durch den Nutzer
 import json
 
 # Option 1: Flotte anzeigen

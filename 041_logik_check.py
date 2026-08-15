@@ -1,3 +1,4 @@
+# Fragt ein Gewicht ab, das per Schleife so lange wiederholt wird, bis es positiv ist
 def hole_positives_gewicht():
     while True:
         try:

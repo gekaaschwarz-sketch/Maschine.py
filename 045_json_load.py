@@ -1,3 +1,4 @@
+# Liest den JSON-Frachtbrief ein und zeigt Fahrer*in, Ladung und Gewicht an
 import json
 
 def daten_import():

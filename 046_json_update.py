@@ -1,3 +1,4 @@
+# Laedt den JSON-Frachtbrief, aktualisiert das Gewicht und speichert das Ergebnis in fracht.json
 import json
 
 def gewicht_aktualisieren(neues_gewicht):

@@ -1,3 +1,4 @@
+# Kernfunktionen fuer die Kundenverwaltung: Kunde anlegen (mit Duplikatschutz) und Kunde per Namen suchen
 import sqlite3
 
 

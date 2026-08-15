@@ -1,3 +1,4 @@
+# Sucht einen LKW per ID und aktualisiert dessen Ladungsgewicht interaktiv
 import json
 
 # Option 1: Flotte anzeigen

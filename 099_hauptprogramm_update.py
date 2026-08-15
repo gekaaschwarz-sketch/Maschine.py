@@ -1,3 +1,4 @@
+# Erweitert das SQL-Hauptmenue um das Aktualisieren der LKW-Last, abgesichert per try/except
 import sqlite3
 
 while True:

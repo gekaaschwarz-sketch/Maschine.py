@@ -1,3 +1,4 @@
+# Fragt per Webdienst die aktuelle oeffentliche IP-Adresse ab, um die Internetverbindung zu pruefen
 import requests
 
 def vpn_check():

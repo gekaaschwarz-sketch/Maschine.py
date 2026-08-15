@@ -1,4 +1,4 @@
-# 026_woerterbuch.py
+# Legt ein Dictionary mit Gewichten an und sucht das Gewicht zu einem eingegebenen Artikel
 
 # Ein Dictionary nutzt geschweifte Klammer { }
 lager = {

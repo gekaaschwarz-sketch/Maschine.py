@@ -1,3 +1,4 @@
+# Aendert bei einem gefundenen LKW sowohl die ID als auch den Fahrernamen komplett
 import json
 
 # Option 1: Flotte anzeigen

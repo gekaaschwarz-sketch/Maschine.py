@@ -1,3 +1,4 @@
+# Erstes SQL-Hauptmenue: zeigt die Flotte aus der Datenbank an, nur Anzeigen und Beenden moeglich
 import sqlite3
 
 while True:

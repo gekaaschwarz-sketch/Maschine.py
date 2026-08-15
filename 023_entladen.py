@@ -1,4 +1,4 @@
-# 023_entladen.py
+# Leert die komplette Frachtliste per .clear(), sobald der LKW in Hamburg ankommt
 fracht = ["Holz", "Stahl", "Papier", "Glas"]
 
 def lkw_leeren(liste):

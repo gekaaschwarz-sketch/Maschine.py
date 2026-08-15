@@ -1,4 +1,4 @@
-# 033_optimierer.py
+# Berechnet den maximal zulaessigen Abstand von vorn, um die Achslast-Grenze einzuhalten
 
 radstand = 5.5
 max_achslast = 6000

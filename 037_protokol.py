@@ -1,4 +1,4 @@
-# 037_protokoll.py
+# Schreibt einen Zeitstempel-Eintrag mit Text ans Ende der Logbuch-Datei (append)
 import datetime # Holt die aktuelle Uhrzeit
 
 def log_schreiben(text):

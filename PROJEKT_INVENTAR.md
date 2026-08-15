@@ -25,34 +25,34 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `020_zoll_rechner.py` | Berechnet den Gesamtzoll aus Frachtgewicht und einem festen Zollsatz pro Kilo |
 | `021_sortieren.py` | Sortiert eine Gewichtsliste einmal aufsteigend und einmal absteigend |
 | `022_suche_plus.py` | Sucht ein Gut in der Fracht und gibt bei Erfolg zusaetzlich dessen Position aus |
-| `023_entladen.py` | Der magische Befehl zum Leeren |
-| `024_sperre.py` | Test |
-| `025_benutzerfreundlich.py` | .upper() macht aus 'ja', 'Ja' oder 'jA' immer 'JA' |
-| `026_woerterbuch.py` | Ein Dictionary nutzt geschweifte Klammer { } |
-| `027_lager_update.py` | Ein neues Gut hinzufügen |
-| `028_lager_loeschen.py` | Ein Gut gezielt löschen |
-| `029_lager_wert.py` | .values() holt nur die Zahlen aus dem Dictionary |
-| `030_lastverteilung.py` | Daten: [Gewicht_kg, Abstand_von_vorn_meter] |
-| `031_lvp_iteraktiv.py` | LVP SCHNEL-CHECK |
-| `032_lvp_warnung.py` | LVP SICHERHEITS-CHECK |
-| `033_optimierer.py` | POSITIONS-OPTIMIERER |
-| `034_airbag.py` | SICHERER GEWICHTS-CHECK |
-| `035_endlos_check.py` | Start |
-| `036_lvp_profi.py` | Das Hauptprogramm |
-| `037_protokol.py` | Test |
-| `038_final_check.py` | 1. Sicherheits-Eingabe |
-| `039_log_lesen.py` | DIGITALE LOGBUCH-AUSGABE |
-| `040_log_limit.py` | NEUESTE LOG-EINTRÄGE |
-| `041_logik_check.py` | Test |
-| `042_universal_check.py` | Test für die LKW-Länge (zwischen 5m und 18.75) |
-| `043_sicheres_log.py` | Die Speicher-Funktion |
-| `044_json_save.py` | Unsere Frachtdaten als Dictionary |
-| `045_json_load.py` | FRACHTBRIEF GELADEN |
-| `046_json_update.py` | 1. Datei einlesen |
-| `047_ip_check.py` | SYSTEM-SICHERCHEITS-CHECK |
-| `048_flotte.py` | Eine Liste mit drei LKW-Datensätzen |
-| `049_flotten_gewicht.py` | FLOTTEN-ANALYSE |
-| `050_jubilaeum.py` | Den schwersten LKW finden |
+| `023_entladen.py` | Leert die komplette Frachtliste per .clear(), sobald der LKW in Hamburg ankommt |
+| `024_sperre.py` | Leert die Fracht nur nach expliziter 'JA'-Bestaetigung durch den Nutzer |
+| `025_benutzerfreundlich.py` | Leert die Fracht nach Bestaetigung, wobei .upper() Gross-/Kleinschreibung bei der Eingabe ignoriert |
+| `026_woerterbuch.py` | Legt ein Dictionary mit Gewichten an und sucht das Gewicht zu einem eingegebenen Artikel |
+| `027_lager_update.py` | Fragt ein neues Gut und Gewicht ab und fuegt es dem Lager-Dictionary hinzu |
+| `028_lager_loeschen.py` | Loescht ein vom Nutzer gewaehltes Gut aus dem Lager-Dictionary, falls vorhanden |
+| `029_lager_wert.py` | Berechnet Gesamtgewicht und Durchschnittsgewicht aller Positionen im Lager-Dictionary |
+| `030_lastverteilung.py` | Berechnet fuer mehrere Ladungen die anteilige Hinterachslast aus Gewicht und Abstand |
+| `031_lvp_iteraktiv.py` | Fragt Gewicht und Abstand interaktiv ab und berechnet die zusaetzliche Hinterachslast |
+| `032_lvp_warnung.py` | Wie 031, warnt zusaetzlich wenn die Achslast das 6000-kg-Limit ueberschreitet |
+| `033_optimierer.py` | Berechnet den maximal zulaessigen Abstand von vorn, um die Achslast-Grenze einzuhalten |
+| `034_airbag.py` | Fragt ein Gewicht ab und faengt ungueltige (nicht-numerische) Eingaben per try/except ab |
+| `035_endlos_check.py` | Erzwingt per Endlosschleife eine gueltige Zahleneingabe fuer das Gewicht |
+| `036_lvp_profi.py` | Nutzt eine wiederverwendbare Eingabefunktion fuer Gewicht und Abstand zur Achslast-Berechnung |
+| `037_protokol.py` | Schreibt einen Zeitstempel-Eintrag mit Text ans Ende der Logbuch-Datei (append) |
+| `038_final_check.py` | Berechnet die Hinterachslast per sicherer Eingabefunktion und protokolliert das Ergebnis im Logbuch |
+| `039_log_lesen.py` | Liest die Logbuch-Datei aus und zeigt ihren Inhalt an, oder meldet wenn sie leer/fehlt |
+| `040_log_limit.py` | Zeigt nur die letzten drei Eintraege aus der Logbuch-Datei an |
+| `041_logik_check.py` | Fragt ein Gewicht ab, das per Schleife so lange wiederholt wird, bis es positiv ist |
+| `042_universal_check.py` | Fragt einen Wert innerhalb eines Min/Max-Bereichs ab, hier genutzt fuer die LKW-Laenge (5 bis 18.75 m) |
+| `043_sicheres_log.py` | Prueft eine Achslast im gueltigen Bereich (0-11500 kg) und schreibt das Ergebnis ins Logbuch |
+| `044_json_save.py` | Speichert einen Frachtdatensatz als JSON-Datei (frachtbrief.json) |
+| `045_json_load.py` | Liest den JSON-Frachtbrief ein und zeigt Fahrer*in, Ladung und Gewicht an |
+| `046_json_update.py` | Laedt den JSON-Frachtbrief, aktualisiert das Gewicht und speichert das Ergebnis in fracht.json |
+| `047_ip_check.py` | Fragt per Webdienst die aktuelle oeffentliche IP-Adresse ab, um die Internetverbindung zu pruefen |
+| `048_flotte.py` | Legt eine Flotten-Liste aus LKW-Dictionaries an und gibt ID sowie Fahrer*in jedes LKW aus |
+| `049_flotten_gewicht.py` | Summiert die Gesamtlast aller LKW in der Flotten-Liste |
+| `050_jubilaeum.py` | Berechnet Durchschnittslast der Flotte und ermittelt den LKW mit der groessten Last |
 | `051_flotte_save.py` | Start |
 | `052_flotte_load.py` | 🚛️ FLOTTEN-STATUS AKTUEL |
 | `053_flotte_add.py` | 1. Bestehende Datenbank laden |
@@ -62,25 +62,25 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `057_kombi_check.py` | Funktion 1: Namens-Check |
 | `058_id_schutz.py` | Wir prüfen jede vorhandene ID in der Liste |
 | `059_lkw_loeschen.py` | Wir suchen den LKW mit der passenden ID |
-| `060_hauptmenue.py` | \n 🚛️ AKTUELLE FLOTTE |
-| `061_menue_loeschen.py` | \n 🚛️ AKTUELLE FLOTTE |
+| `060_hauptmenue.py` | Erstes interaktives Hauptmenue: zeigt die Flotte an, Loeschen ist noch nicht implementiert (Platzhalter) |
+| `061_menue_loeschen.py` | Erweitert das Hauptmenue um eine echte Loeschfunktion fuer einen LKW per ID |
 | `062_menue_add.py` | Wächter: Namens-Validierung |
 | `063_final_term.py` | Wächter: Namens-Schutz |
 | `064_schleifen_fix.py` | Eine neue Liste bauen, die nur die LKWs enthält, die NICHT gelöscht werden sollen |
-| `065_profi_term.py` | Wächter 1: Namens-Schutz |
-| `066_all_in_one.py` | Wächter 1: Namens-Schutz |
+| `065_profi_term.py` | Fuegt einen neuen LKW hinzu, mit Namens-Validierung und Schutz vor doppelten IDs |
+| `066_all_in_one.py` | Kombiniert Anzeigen, Hinzufuegen und eine radikale Loeschfunktion (entfernt alle Eintraege mit gleicher ID) |
 | `067_wert_schutz.py` | try fängt ab, wenn der Nutzer Buchstaben statt Zahlen eintippt |
-| `068_festung_term.py` | Wächter 1: Namens-Schutz |
+| `068_festung_term.py` | Ergaenzt eine Gewichts-Validierung (0 bis 40000 kg) beim Hinzufuegen eines neuen LKW |
 | `069_notaus_term.py` | Wächter 1: Namens-Schutz MIT NOTAUS-SYSTEM! |
 | `070_doppel_notaus.py` | Wächter 1: Namens-Schuty MIT NOTAUS-SYSTEM |
 | `071_wert_notaus.py` | Wächter 1: Namens-Schuts MIT NOTAUS-SYSTEM! |
-| `072_loeschen_profi.py` | Option 1: Flotte anzeigen |
-| `073_mehrfach_loeschen.py` | Option 1: Flotte anzeigen |
+| `072_loeschen_profi.py` | Loescht einen LKW erst nach expliziter Ja/Nein-Bestaetigung durch den Nutzer |
+| `073_mehrfach_loeschen.py` | Loescht alle LKW-Eintraege mit einer bestimmten ID auf einmal, nach Bestaetigung |
 | `074_suche_profi.py` | Option 1: |
-| `075_bearbeiten_profi.py` | Option 1: Flotte anzeigen |
-| `076_umregistrieren.py` | Option 1: Flotte anzeigen |
-| `077_export_profi.py` | Option 1: Flotte anzeigen |
-| `078_statistik_profi.py` | Option 1: Flotte anzeigen |
+| `075_bearbeiten_profi.py` | Sucht einen LKW per ID und aktualisiert dessen Ladungsgewicht interaktiv |
+| `076_umregistrieren.py` | Aendert bei einem gefundenen LKW sowohl die ID als auch den Fahrernamen komplett |
+| `077_export_profi.py` | Exportiert die komplette Flotte als formatierten Bericht in die Datei speditions_bericht.txt |
+| `078_statistik_profi.py` | Berechnet Anzahl, Gesamtgewicht und Durchschnittslast aller LKW in der Flotte |
 | `079_sqlite_start.py` | SQLITE-DATENBANK-TRESOR STARTEN |
 | `080_tabelle_bau.py` | SQL-TABELLENSTRUKTUR ERSTELLEN |
 | `081_daten_rein.py` | LKW-DATEN IN TRESOR LADEN |
@@ -91,17 +91,17 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `086_dynamisch.py` | DYNAMISCHES LKW-UPDATE |
 | `087_neuer_lkw.py` | NEUEN LKW REGISTRIEREN |
 | `088_suche.py` | SQL-BLITZSUCHE NACH ID |
-| `089_super_suche.py` | 🌟 SQL SUPER-SUCHE v1.0 🌟 |
-| `090_fehlerschutz.py` | 🌟 SQL SUPER-SUCHE v1.0 🌟 |
+| `089_super_suche.py` | Sucht in der SQL-Datenbank einen LKW wahlweise per ID oder per Fahrername |
+| `090_fehlerschutz.py` | Wie 089, aber bricht das Skript sofort ab, wenn eine ungueltige Menuewahl eingegeben wird |
 | `091_sortieren.py` | ⚖️ FLOTTE NACH GEWICHT SORTIERT |
 | `092_gewicht_filter.py` | HOCHLAST-FILTER (> 4000 kg) |
 | `093_zaehlen.py` | 📊 FLOTTEN-STATISTIK: ANZAHL |
 | `094_gesamtgewicht.py` | 📊 FLOTTEN-STATISTIK: GESAMTGEWICHT |
 | `095_durchschnitt.py` | 📊 PROFI-STATISTIK & LIMIT |
-| `096_hauptprogramm_sql.py` | 🚛 SPEDITION HAMBURG SQL |
-| `097_hauptprogramm_insert.py` | 🚛 SPEDITION HAMBURG SQL |
-| `098_hauptprogramm_delete.py` | 🚛 SPEDITION HAMBURG SQL |
-| `099_hauptprogramm_update.py` | 🚛 SPEDITION HAMBURG SQL |
+| `096_hauptprogramm_sql.py` | Erstes SQL-Hauptmenue: zeigt die Flotte aus der Datenbank an, nur Anzeigen und Beenden moeglich |
+| `097_hauptprogramm_insert.py` | Erweitert das SQL-Hauptmenue um das Einfuegen eines neuen LKW in die Datenbank |
+| `098_hauptprogramm_delete.py` | Erweitert das SQL-Hauptmenue um das Loeschen eines LKW per ID (mit Abbruch-Option 'x') |
+| `099_hauptprogramm_update.py` | Erweitert das SQL-Hauptmenue um das Aktualisieren der LKW-Last, abgesichert per try/except |
 | `107_zweig_feature.py` | 🌿 FEATURE-BRANCH: SUPER-STATISTIK |
 | `113_kunden_tabelle.py` | 👥 SQL-KUNDEN-ZENTRALE v1.0 |
 | `114_sql_join.py` | 📊 COMBINED DISPO-REPORT (SQL JOIN) |
@@ -172,4 +172,4 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `180_integrity_check.py` | 🔍 AUTOMATISIERTER DATENBANK-GESUNDHEITSCHECK |
 | `189_generate_inventory.py` | 📋 AUTOMATISCHES PROJEKT-INVENTAR |
 | `190_find_gaps.py` | 🔎 LÜCKEN-FINDER IM PROJEKT-INVENTAR |
-| `kunden_modul_183.py` | Keine Beschreibung extrahierbar. |
+| `kunden_modul_183.py` | Kernfunktionen fuer die Kundenverwaltung: Kunde anlegen (mit Duplikatschutz) und Kunde per Namen suchen |

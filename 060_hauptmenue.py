@@ -1,3 +1,4 @@
+# Erstes interaktives Hauptmenue: zeigt die Flotte an, Loeschen ist noch nicht implementiert (Platzhalter)
 import json
 
 def lade_flotte():

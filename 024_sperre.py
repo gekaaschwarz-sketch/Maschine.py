@@ -1,4 +1,4 @@
-# 024_sperre.py
+# Leert die Fracht nur nach expliziter 'JA'-Bestaetigung durch den Nutzer
 fracht = ["Holz", "Stahl", "Papier", "Glas"]
 
 def sicheres_entladen(liste):

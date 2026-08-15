@@ -1,3 +1,4 @@
+# Kombiniert Anzeigen, Hinzufuegen und eine radikale Loeschfunktion (entfernt alle Eintraege mit gleicher ID)
 import json
 
 # Wächter 1: Namens-Schutz

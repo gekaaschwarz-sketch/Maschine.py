@@ -1,3 +1,4 @@
+# Sucht in der SQL-Datenbank einen LKW wahlweise per ID oder per Fahrername
 import sqlite3
 
 print("\n=========================================")

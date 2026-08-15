@@ -1,4 +1,4 @@
-# 030_lastverteilung.py
+# Berechnet fuer mehrere Ladungen die anteilige Hinterachslast aus Gewicht und Abstand
 
 # Daten: [Gewicht_kg, Abstand_von_vorn_meter]
 lager = {

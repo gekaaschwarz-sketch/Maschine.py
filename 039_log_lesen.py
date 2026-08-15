@@ -1,4 +1,4 @@
-# 039_log_lesen.py
+# Liest die Logbuch-Datei aus und zeigt ihren Inhalt an, oder meldet wenn sie leer/fehlt
 
 def logbuch_anzeigen():
     print("--- DIGITALE LOGBUCH-AUSGABE ---")

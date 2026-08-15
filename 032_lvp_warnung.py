@@ -1,4 +1,4 @@
-# 032_lvp_warnung.py
+# Wie 031, warnt zusaetzlich wenn die Achslast das 6000-kg-Limit ueberschreitet
 
 radstand = 5.5
 max_achslast = 6000 # Limit in kg

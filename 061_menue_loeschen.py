@@ -1,3 +1,4 @@
+# Erweitert das Hauptmenue um eine echte Loeschfunktion fuer einen LKW per ID
 import json
 
 def zeige_flotte():

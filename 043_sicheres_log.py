@@ -1,3 +1,4 @@
+# Prueft eine Achslast im gueltigen Bereich (0-11500 kg) und schreibt das Ergebnis ins Logbuch
 import datetime
 
 def hole_zahl_im_bereich(name, minimum, maximum):

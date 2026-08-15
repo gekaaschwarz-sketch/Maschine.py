@@ -1,3 +1,4 @@
+# Loescht alle LKW-Eintraege mit einer bestimmten ID auf einmal, nach Bestaetigung
 import json
 
 # Option 1: Flotte anzeigen

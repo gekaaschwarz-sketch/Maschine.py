@@ -1,3 +1,4 @@
+# Exportiert die komplette Flotte als formatierten Bericht in die Datei speditions_bericht.txt
 import json
 
 # Option 1: Flotte anzeigen

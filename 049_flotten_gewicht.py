@@ -1,4 +1,4 @@
-# 049_flotten_gewicht.py
+# Summiert die Gesamtlast aller LKW in der Flotten-Liste
 
 flotte = [
     {"ID": "HH-01", "Fahrer_in": "Valentin", "Last": 2500},

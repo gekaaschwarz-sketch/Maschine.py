@@ -1,4 +1,4 @@
-# 029_lager_wert.py
+# Berechnet Gesamtgewicht und Durchschnittsgewicht aller Positionen im Lager-Dictionary
 
 lager = {
     "Holz": 1500,

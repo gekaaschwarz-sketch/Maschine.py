@@ -1,4 +1,4 @@
-# 040_log_limit.py
+# Zeigt nur die letzten drei Eintraege aus der Logbuch-Datei an
 
 def letzte_einträge_zeigen():
     print("--- NEUESTE LOG-EINTRÄGE ---")

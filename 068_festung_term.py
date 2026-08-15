@@ -1,3 +1,4 @@
+# Ergaenzt eine Gewichts-Validierung (0 bis 40000 kg) beim Hinzufuegen eines neuen LKW
 import json
 
 # Wächter 1: Namens-Schutz

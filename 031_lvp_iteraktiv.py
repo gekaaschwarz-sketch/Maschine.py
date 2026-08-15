@@ -1,4 +1,4 @@
-# 031_lvp_iteraktiv.py
+# Fragt Gewicht und Abstand interaktiv ab und berechnet die zusaetzliche Hinterachslast
 
 radstand = 5.5 # Fester Wert für deinem LKW
 

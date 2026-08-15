@@ -1,4 +1,4 @@
-# 028_lager_loeschen.py
+# Loescht ein vom Nutzer gewaehltes Gut aus dem Lager-Dictionary, falls vorhanden
 
 lager = {
     "Holz": 1500,

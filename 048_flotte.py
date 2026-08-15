@@ -1,4 +1,4 @@
-# 048_flotte.py
+# Legt eine Flotten-Liste aus LKW-Dictionaries an und gibt ID sowie Fahrer*in jedes LKW aus
 
 # Eine Liste mit drei LKW-Datensätzen
 flotte = [

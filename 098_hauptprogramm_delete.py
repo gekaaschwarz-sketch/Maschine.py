@@ -1,3 +1,4 @@
+# Erweitert das SQL-Hauptmenue um das Loeschen eines LKW per ID (mit Abbruch-Option 'x')
 import sqlite3
 
 while True:

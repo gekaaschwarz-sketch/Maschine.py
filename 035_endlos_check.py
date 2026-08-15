@@ -1,4 +1,4 @@
-# 035_endlos_check.py
+# Erzwingt per Endlosschleife eine gueltige Zahleneingabe fuer das Gewicht
 
 def gewicht_erzwingen():
     while True: # Die Schleife läuft ewig...

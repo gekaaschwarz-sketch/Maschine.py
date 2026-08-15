@@ -1,4 +1,4 @@
-# 036_lvp_profi.py
+# Nutzt eine wiederverwendbare Eingabefunktion fuer Gewicht und Abstand zur Achslast-Berechnung
 
 def zahl_eingabe(aufforderung):
     while True:

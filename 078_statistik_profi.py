@@ -1,3 +1,4 @@
+# Berechnet Anzahl, Gesamtgewicht und Durchschnittslast aller LKW in der Flotte
 import json
 
 # Option 1: Flotte anzeigen

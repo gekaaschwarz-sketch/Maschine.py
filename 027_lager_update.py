@@ -1,4 +1,4 @@
-# 027_lager_update.py
+# Fragt ein neues Gut und Gewicht ab und fuegt es dem Lager-Dictionary hinzu
 
 lager = {
     "Holz": 1500,

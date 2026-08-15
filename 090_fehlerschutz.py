@@ -1,3 +1,4 @@
+# Wie 089, aber bricht das Skript sofort ab, wenn eine ungueltige Menuewahl eingegeben wird
 import sqlite3
 
 print("\n=========================================")
