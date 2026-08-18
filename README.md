@@ -11,5 +11,5 @@ Dieses Repository enthält mein vollständiges Software-Imperium aus über 100 L
 ## 🚀 Hauptprogramm starten
 Das krisensichere Hauptprogramm kann direkt über das Linux-Terminal gezündet werden:
 ```bash
-python3 099_hauptprogramm_update.py
+python3 02_sqlite_basics/099_hauptprogramm_update.py
 ```
