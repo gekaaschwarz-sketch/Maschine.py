@@ -1,12 +1,13 @@
+# Testet KundenVerwaltung: Kunde anlegen, Duplikat-Fehler, erfolgreiche Suche und Suche ohne Treffer
 import sqlite3
 import os
 import unittest
-from kunden_modul_183 import kunde_hinzufuegen, kunde_suchen  # Import der eigenen Funktionen!
+from kunden_modul_183 import KundenVerwaltung
 
 TEST_DB = "test_tresor.db"
 
 
-class TestKundenModul(unittest.TestCase):
+class TestKundenVerwaltung(unittest.TestCase):
 
     def setUp(self):
         if os.path.exists(TEST_DB):
@@ -18,24 +19,25 @@ class TestKundenModul(unittest.TestCase):
                     name TEXT UNIQUE
                 )
             """)
-        kunde_hinzufuegen(TEST_DB, "Hamburg-Kaffee AG")
+        self.verwaltung = KundenVerwaltung(TEST_DB)
+        self.verwaltung.hinzufuegen("Hamburg-Kaffee AG")
 
     def test_neuer_kunde_wird_erfolgreich_hinzugefuegt(self):
-        ergebnis = kunde_hinzufuegen(TEST_DB, "Alster-Logistik GmbH")
+        ergebnis = self.verwaltung.hinzufuegen("Alster-Logistik GmbH")
         self.assertTrue(ergebnis)
 
     def test_duplikat_wirft_verstaendlichen_valueerror(self):
         with self.assertRaises(ValueError):
-            kunde_hinzufuegen(TEST_DB, "Hamburg-Kaffee AG")
+            self.verwaltung.hinzufuegen("Hamburg-Kaffee AG")
 
     def test_vorhandener_kunde_wird_gefunden(self):
-        ergebnis = kunde_suchen(TEST_DB, "Hamburg-Kaffee AG")
-        self.assertIsNotNone(ergebnis)
-        self.assertEqual(ergebnis[1], "Hamburg-Kaffee AG")
+        kunde = self.verwaltung.suchen("Hamburg-Kaffee AG")
+        self.assertIsNotNone(kunde)
+        self.assertEqual(kunde.name, "Hamburg-Kaffee AG")
 
     def test_nicht_vorhandener_kunde_gibt_none_zurueck(self):
-        ergebnis = kunde_suchen(TEST_DB, "Diesen-Kunden-gibt-es-nicht GmbH")
-        self.assertIsNone(ergebnis)
+        kunde = self.verwaltung.suchen("Diesen-Kunden-gibt-es-nicht GmbH")
+        self.assertIsNone(kunde)
 
     def tearDown(self):
         if os.path.exists(TEST_DB):
