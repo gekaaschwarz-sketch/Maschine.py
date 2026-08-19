@@ -1,25 +1,26 @@
 # Kernfunktionen fuer die Kundenverwaltung: Kunde anlegen (mit Duplikatschutz) und Kunde per Namen suchen
 import sqlite3
+from typing import Optional
 
 
 class Kunde:
     """Repraesentiert einen einzelnen Kundendatensatz."""
 
-    def __init__(self, id, name):
+    def __init__(self, id: int, name: str) -> None:
         self.id = id
         self.name = name
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Kunde(id={self.id}, name='{self.name}')"
 
 
 class KundenVerwaltung:
     """Kapselt alle Datenbank-Operationen rund um Kunden."""
 
-    def __init__(self, db_pfad):
+    def __init__(self, db_pfad: str) -> None:
         self.db_pfad = db_pfad
 
-    def hinzufuegen(self, name):
+    def hinzufuegen(self, name: str) -> bool:
         """
         Fuegt einen Kunden hinzu. Gibt True zurueck bei Erfolg.
         Wirft ValueError, wenn der Name bereits existiert.
@@ -33,7 +34,7 @@ class KundenVerwaltung:
             except sqlite3.IntegrityError:
                 raise ValueError(f"Kunde '{name}' existiert bereits!")
 
-    def suchen(self, name):
+    def suchen(self, name: str) -> Optional[Kunde]:
         """
         Sucht einen Kunden anhand des Namens.
         Gibt ein Kunde-Objekt zurueck, wenn gefunden.
