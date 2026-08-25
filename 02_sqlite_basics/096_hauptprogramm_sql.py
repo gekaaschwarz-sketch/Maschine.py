@@ -1,6 +1,8 @@
 # Erstes SQL-Hauptmenue: zeigt die Flotte aus der Datenbank an, nur Anzeigen und Beenden moeglich
 import sqlite3
 
+DB_TABLE_LKW = "fleet_trucks"  # zentral konfigurierbarer Tabellenname für LKWs
+
 while True:
     print("\n=========================================")
     print("--- 🚛 SPEDITION HAMBURG SQL ---")
@@ -14,7 +16,7 @@ while True:
         verbindung = sqlite3.connect("speditions_tresor.db")
         cursor = verbindung.cursor()
 
-        cursor.execute("SELECT * FROM lkw_flotte")
+        cursor.execute(f"SELECT * FROM {DB_TABLE_LKW}")
         alle_lkw = cursor.fetchall()
 
         print("\n--- 🗄️ SQL-TRESOR: AKTUELLE FLOTTE ---")
