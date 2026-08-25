@@ -1,6 +1,10 @@
 # Erweitert das SQL-Hauptmenue um das Einfuegen eines neuen LKW in die Datenbank
 import sqlite3
 
+# Konfiguration: zentrale Konstanten für DB-Pfad und Tabellennamen
+DB_PATH = "speditions_tresor.db"
+DB_TABLE_LKW = "fleet_trucks"
+
 while True:
 
     print("\n=====================================")
@@ -13,10 +17,10 @@ while True:
     auswahl = input("\nDeine Auswahl: ")
 
     if auswahl == "1":
-        verbindung = sqlite3.connect("speditions_tresor.db")
+        verbindung = sqlite3.connect(DB_PATH)
         cursor = verbindung.cursor()
 
-        cursor.execute("SELECT * FROM lkw_flotte")
+        cursor.execute(f"SELECT * FROM {DB_TABLE_LKW}")
         alle_lkw = cursor.fetchall()
 
         print("\n--- 🗄️ SQL-TRESOR: AKTUELLE FLOTTE ---")
@@ -31,11 +35,14 @@ while True:
         neuer_fahrer = input("Wer ist der Fahrer / die Fahrerin?: ")
         neue_last = int(input("Wie viele kg Last hat der LKW?: "))
 
-        verbindung = sqlite3.connect("speditions_tresor.db")
+        verbindung = sqlite3.connect(DB_PATH)
         cursor = verbindung.cursor()
 
-        cursor.execute("INSERT INTO lkw_flotte (id, fahrer_in, last) VALUES (?, ?, ?)", (neue_id, neuer_fahrer, neue_last))
-        verbindung.commit() # Ganz wichtig bei Änderung!
+        cursor.execute(
+            f"INSERT INTO {DB_TABLE_LKW} (id, fahrer_in, last) VALUES (?, ?, ?)",
+            (neue_id, neuer_fahrer, neue_last)
+        )
+        verbindung.commit()
         verbindung.close()
 
         print(f"✔️ LKW {neue_id} erfolgreich im SQL-Tresor verankert!")
