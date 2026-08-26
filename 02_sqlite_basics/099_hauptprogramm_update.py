@@ -1,6 +1,10 @@
 # Erweitert das SQL-Hauptmenue um das Aktualisieren der LKW-Last, abgesichert per try/except
 import sqlite3
 
+# Konfiguration: zentrale Konstanten für DB-Pfad und Tabellennamen
+DB_PATH = "speditions_tresor.db"
+DB_TABLE_LKW = "fleet_trucks"  # setze hier den tatsächlichen Tabellennamen
+
 while True:
     print("\n=====================================")
     print("--- 🚛 SPEDITION HAMBURG SQL ---")
@@ -14,10 +18,10 @@ while True:
     auswahl = input("\nDeine Auswahl: ")
 
     if auswahl == "1":
-        verbindung = sqlite3.connect("speditions_tresor.db")
+        verbindung = sqlite3.connect(DB_PATH)
         cursor = verbindung.cursor()
 
-        cursor.execute("SELECT * FROM lkw_flotte")
+        cursor.execute(f"SELECT * FROM {DB_TABLE_LKW}")
         alle_lkw = cursor.fetchall()
 
         print("\n--- 🗄️ SQL-TRESOR: AKTUELLE FLOTTE ---")
@@ -32,14 +36,14 @@ while True:
         neuer_fahrer = input("Wer ist der Fahrer / die Fahrerin?: ")
         neue_last = int(input("Wie viele kg Last hat der LKW?: "))
 
-        verbindung = sqlite3.connect("speditions_tresor.db")
+        verbindung = sqlite3.connect(DB_PATH)
         cursor = verbindung.cursor()
 
-        cursor.execute("INSERT INTO lkw_flotte (id, fahrer_in, last) VALUES (?, ?, ?)", (neue_id, neuer_fahrer, neue_last))
+        cursor.execute(f"INSERT INTO {DB_TABLE_LKW} (id, fahrer_in, last) VALUES (?, ?, ?)", (neue_id, neuer_fahrer, neue_last))
         verbindung.commit()
         verbindung.close()
 
-        print(f"✔️ LKW {neue_id} erfolgreich im SQL-Tresor verankelt!")
+        print(f"✔️ LKW {neue_id} erfolgreich im SQL-Tresor verankert!")
     
     elif auswahl == "3":
         print("\n--- 🗑️ LKW-ID AUS TRESOR LÖSCHEN ---")
@@ -50,15 +54,15 @@ while True:
             print("\n❌ Löschvorgang abgebrochen. Zurück zum Hauptmenü!")
             continue
 
-        verbindung = sqlite3.connect("speditions_tresor.db")
+        verbindung = sqlite3.connect(DB_PATH)
         cursor = verbindung.cursor()
 
-        cursor.execute("DELETE FROM lkw_flotte WHERE id = ?", (loesch_id,))
+        cursor.execute(f"DELETE FROM {DB_TABLE_LKW} WHERE id = ?", (loesch_id,))
         verbindung.commit()
         verbindung.close()
 
         print(f"\n🗑️ LKW {loesch_id} wurde erfolgreich aus dem SQL-Tresor entfernt!")
-
+ 
     elif auswahl == "5":
         print("\n--- 🔄 LKW-LAST IM TRESOR AKTUALISIEREN ---")
         print("(Tippe 'X' ein, um den Vorgang abzubrechen)")
@@ -76,10 +80,10 @@ while True:
             continue  # Springt sicher zurück ins Hauptmenü, OHNE Absturz!
 
         # Erst wenn alles sicher ist, geht es an die SQL-Arbeit
-        verbindung = sqlite3.connect("speditions_tresor.db")
+        verbindung = sqlite3.connect(DB_PATH)
         cursor = verbindung.cursor()
 
-        cursor.execute("UPDATE lkw_flotte SET last = ? WHERE id = ?", (neue_last, update_id))
+        cursor.execute(f"UPDATE {DB_TABLE_LKW} SET last = ? WHERE id = ?", (neue_last, update_id))
         verbindung.commit()
         verbindung.close()
 
