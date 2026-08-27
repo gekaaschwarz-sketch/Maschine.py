@@ -1,10 +1,43 @@
 # Erweitert das SQL-Hauptmenue um das Aktualisieren der LKW-Last, abgesichert per try/except
 import sqlite3
-from typing import Any
 
 # Konfiguration: zentrale Konstanten für DB-Pfad und Tabellennamen
 DB_PATH = "speditions_tresor.db"
 DB_TABLE_LKW = "fleet_trucks"  # setze hier den tatsächlichen Tabellennamen
+
+
+def lkw_existiert(db_path: str, truck_id: str) -> bool:
+    """
+    Prüft, ob ein LKW mit der gegebenen ID in der DB existiert.
+    Gibt True zurück, wenn vorhanden, sonst False.
+    """
+    verbindung = sqlite3.connect(db_path)
+    cursor = verbindung.cursor()
+    try:
+        cursor.execute(f"SELECT 1 FROM {DB_TABLE_LKW} WHERE id = ? LIMIT 1", (truck_id,))
+        return cursor.fetchone() is not None
+    finally:
+        verbindung.close()
+
+
+def delete_lkw(db_path: str, truck_id: str) -> bool:
+    """
+    Löscht einen LKW mit der gegebenen ID.
+    Gibt True zurück, wenn eine Zeile gelöscht wurde, sonst False.
+    Commit nur bei Löschung; rollback bei 0 Zeilen.
+    """
+    verbindung = sqlite3.connect(db_path)
+    cursor = verbindung.cursor()
+    try:
+        cursor.execute(f"DELETE FROM {DB_TABLE_LKW} WHERE id = ?", (truck_id,))
+        if cursor.rowcount > 0:
+            verbindung.commit()
+            return True
+        else:
+            verbindung.rollback()
+            return False
+    finally:
+        verbindung.close()
 
 
 def update_lkw_last(db_path: str, truck_id: str, neue_last: int) -> bool:
@@ -57,7 +90,11 @@ def main() -> int:
             print("\n--- 📥️ NEUEN LKW REGISTRIEREN ---")
             neue_id = input("Gib die neue LKW-ID ein: ")
             neuer_fahrer = input("Wer ist der Fahrer / die Fahrerin?: ")
-            neue_last = int(input("Wie viele kg Last hat der LKW?: "))
+            try:
+                neue_last = int(input("Wie viele kg Last hat der LKW?: "))
+            except ValueError:
+                print("\n⚠️ FEHLER: Du musst eine echte Zahl eingeben! Vorgang abgebrochen.")
+                continue
 
             verbindung = sqlite3.connect(DB_PATH)
             cursor = verbindung.cursor()
@@ -78,14 +115,11 @@ def main() -> int:
                 print("\n❌ Löschvorgang abgebrochen. Zurück zum Hauptmenü!")
                 continue
 
-            verbindung = sqlite3.connect(DB_PATH)
-            cursor = verbindung.cursor()
-
-            cursor.execute(f"DELETE FROM {DB_TABLE_LKW} WHERE id = ?", (loesch_id,))
-            verbindung.commit()
-            verbindung.close()
-
-            print(f"\n🗑️ LKW {loesch_id} wurde erfolgreich aus dem SQL-Tresor entfernt!")
+            deleted = delete_lkw(DB_PATH, loesch_id)
+            if deleted:
+                print(f"\n🗑️ LKW {loesch_id} wurde erfolgreich aus dem SQL-Tresor entfernt!")
+            else:
+                print(f"\n⚠️ Kein LKW mit ID '{loesch_id}' gefunden — nichts gelöscht.")
 
         elif auswahl == "5":
             print("\n--- 🔄 LKW-LAST IM TRESOR AKTUALISIEREN ---")
@@ -96,7 +130,11 @@ def main() -> int:
                 print("\n❌ Vorgang abgebrochen. Zurück zum Hauptmenü!")
                 continue
 
-            # Eingabevalidierung
+            # Prüfe Existenz VOR der Abfrage der neuen Last
+            if not lkw_existiert(DB_PATH, update_id):
+                print(f"\n⚠️ Kein LKW mit ID '{update_id}' gefunden — kein Update durchgeführt.")
+                continue
+
             try:
                 neue_last = int(input("Was ist das neue Gewicht in kg?: "))
             except ValueError:
@@ -108,7 +146,9 @@ def main() -> int:
             if updated:
                 print(f"\n🔄 LKW {update_id} wurde dynamisch auf {neue_last} kg gesetzt!")
             else:
-                print(f"\n⚠️ Kein LKW mit ID '{update_id}' gefunden — kein Update durchgeführt.")
+                # Dieses Zweig sollte bei vorheriger Existenzprüfung selten treten,
+                # kann aber bei Race‑Conditions auftauchen.
+                print(f"\n⚠️ Update für LKW '{update_id}' konnte nicht durchgeführt werden.")
 
         elif auswahl == "4":
             print("\nTschüss, Valentin! Sichere Fahrt!")
