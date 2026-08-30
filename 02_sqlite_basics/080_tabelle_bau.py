@@ -11,14 +11,14 @@ cursor = verbindung.cursor()
 # 2. Der SQL-Befehl zum Erstellen des Stahlschranks (Tabelle)
 # "IF NOT EXISTS" sorgt dafür, dass das Programm nicht abstürzt, wenn die Tabelle schon da ist!
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS lkw_flotte (
+CREATE TABLE IF NOT EXISTS fleet_trucks (
     id TEXT,
     fahrer_in TEXT,
     last INTEGER
 )
 """)
 
-print("⚙️ Wächter: Die Struktur für 'lkw_flotte' wurde erfolgreich zementiert!")
+print("⚙️ Wächter: Die Struktur für 'fleet_trucks' wurde erfolgreich zementiert!")
 
 # 3. Die Änderungen permanent auf der 1-TB-SSD speichern und schließen
 verbindung.commit()
