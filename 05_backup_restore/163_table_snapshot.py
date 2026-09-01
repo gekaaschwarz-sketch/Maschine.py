@@ -9,16 +9,16 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
 
     print("\n⚡️ Starte krisensicheres Tabellen-Klonen (Snapshot)...")
     try:
-        cursor.execute("DROP TABLE IF EXISTS lkw_flotte_backup_snapshot;")
+        cursor.execute("DROP TABLE IF EXISTS fleet_trucks_backup_snapshot;")
 
         cursor.execute("""
-            CREATE TABLE lkw_flotte_backup_snapshot AS
-            SELECT * FROM lkw_flotte;
+            CREATE TABLE fleet_trucks_backup_snapshot AS
+            SELECT * FROM fleet_trucks;
         """)
         verbindung.commit()
-        print("💎 SUCCESS: Lokaler Sicherheits-Snapshot 'lkw_flotte_backup_snapshot' wurde erstellt!")
+        print("💎 SUCCESS: Lokaler Sicherheits-Snapshot 'fleet_trucks_backup_snapshot' wurde erstellt!")
 
-        cursor.execute("SELECT COUNT(*) FROM lkw_flotte_backup_snapshot;")
+        cursor.execute("SELECT COUNT(*) FROM fleet_trucks_backup_snapshot;")
         zeilen_anzahl = cursor.fetchone()[0]
         print(f"📊 Integritäts-Prüfung: {zeilen_anzahl} LKW-Datensätze krisensicher gesichert.")
 
