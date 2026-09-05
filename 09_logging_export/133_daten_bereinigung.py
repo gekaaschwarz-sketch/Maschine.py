@@ -12,7 +12,7 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
     cursor.execute("""
         UPDATE kunden
         SET zugeordneter_lkw = 'KEIN LKW'
-        WHERE zugeordneter_lkw NOT IN (SELECT id FROM lkw_flotte)
+        WHERE zugeordneter_lkw NOT IN (SELECT id FROM fleet_trucks)
     """)
 
     anzahl_bereinigt = cursor.rowcount
