@@ -12,7 +12,7 @@ try:
 
     cursor.execute("INSERT INTO kunden (name, zugeordneter_lkw) VALUES ('Zoll-Abfertigung Nord', 'HH-99')")
 
-    cursor.execute("UPDATE lkw_flotte SET gewitter = 'FEHLER' WHERE id = 1")
+    cursor.execute("UPDATE fleet_trucks SET gewitter = 'FEHLER' WHERE id = 1")
 
     verbindung.commit()
     print("✔️ Erfolg: Beide Buchungen fehlerfrei eingebrannt!")
