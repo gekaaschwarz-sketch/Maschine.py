@@ -7,7 +7,7 @@ print("=========================================")
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("DELETE FROM lkw_flotte WHERE id = 'HH-02'")
+cursor.execute("DELETE FROM fleet_trucks WHERE id = 'HH-02'")
 
 verbindung.commit()
 verbindung.close()
