@@ -11,7 +11,7 @@ neue_last = int(input("Wie viel kg Last hat der LKW?: "))
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("INSERT INTO lkw_flotte (id, fahrer_in, last) VALUES (?, ?, ?)", (neue_id, neuer_fahrer, neue_last))
+cursor.execute("INSERT INTO fleet_trucks (id, fahrer_in, last) VALUES (?, ?, ?)", (neue_id, neuer_fahrer, neue_last))
 
 verbindung.commit()
 verbindung.close()
