@@ -10,7 +10,7 @@ neues_gewicht = int(input("Was ist das neue Gewicht in kg?: "))
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("UPDATE lkw_flotte SET last = ? WHERE id = ?", (neues_gewicht, gesuchte_id))
+cursor.execute("UPDATE fleet_trucks SET last = ? WHERE id = ?", (neues_gewicht, gesuchte_id))
 
 verbindung.commit()
 verbindung.close()
