@@ -7,7 +7,7 @@ print("=========================================")
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("SELECT SUM(last) FROM lkw_flotte")
+cursor.execute("SELECT SUM(last) FROM fleet_trucks")
 ergebnis = cursor.fetchone()
 
 gesamt_last = ergebnis[0]

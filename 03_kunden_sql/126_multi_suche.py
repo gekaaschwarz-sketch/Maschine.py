@@ -11,10 +11,10 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
     cursor = verbindung.cursor()
 
     cursor.execute("""
-        SELECT kunden.name, kunden.zugeordneter_lkw, lkw_flotte.fahrer_in
+        SELECT kunden.name, kunden.zugeordneter_lkw, fleet_trucks.fahrer_in
         FROM kunden
-        LEFT JOIN lkw_flotte ON kunden.zugeordneter_lkw = lkw_flotte.id
-        WHERE kunden.name LIKE ? OR lkw_flotte.fahrer_in LIKE ?
+        LEFT JOIN fleet_trucks ON kunden.zugeordneter_lkw = fleet_trucks.id
+        WHERE kunden.name LIKE ? OR fleet_trucks.fahrer_in LIKE ?
     """, (such_muster, such_muster))
 
     ergebnisse = cursor.fetchall()

@@ -19,10 +19,10 @@ cursor = verbindung.cursor()
 
 if auswahl == "1":
     such_id = input("Gib die LKW-ID ein: ")
-    cursor.execute("SELECT * FROM lkw_flotte WHERE id = ?", (such_id,))
+    cursor.execute("SELECT * FROM fleet_trucks WHERE id = ?", (such_id,))
 elif auswahl == "2":
     such_name = input("Gib den Namen ein: ")
-    cursor.execute("SELECT * FROM lkw_flotte WHERE fahrer_in = ?", (such_name,))
+    cursor.execute("SELECT * FROM fleet_trucks WHERE fahrer_in = ?", (such_name,))
 
 ergebnis = cursor.fetchone()
 if ergebnis:

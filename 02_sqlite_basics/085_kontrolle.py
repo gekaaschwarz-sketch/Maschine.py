@@ -7,7 +7,7 @@ print("=========================================")
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("SELECT * FROM lkw_flotte")
+cursor.execute("SELECT * FROM fleet_trucks")
 alle_lkw = cursor.fetchall()
 
 for zeile in alle_lkw:

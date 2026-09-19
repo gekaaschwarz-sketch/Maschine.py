@@ -9,7 +9,7 @@ grenze = int(input("Zeige LKWs mit mehr Last als (in kg): "))
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("SELECT * FROM lkw_flotte WHERE last > ?", (grenze,))
+cursor.execute("SELECT * FROM fleet_trucks WHERE last > ?", (grenze,))
 gefilterte_lkw = cursor.fetchall()
 
 print(f"\n--- 🚛 LKWs ÜBER {grenze} kg ---")

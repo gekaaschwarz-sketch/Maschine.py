@@ -9,7 +9,7 @@ such_id = input("Welche LKW-ID suchst du genau?: ")
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("SELECT * FROM lkw_flotte WHERE id = ?", (such_id,))
+cursor.execute("SELECT * FROM fleet_trucks WHERE id = ?", (such_id,))
 ergebnis = cursor.fetchone()
 
 if ergebnis:

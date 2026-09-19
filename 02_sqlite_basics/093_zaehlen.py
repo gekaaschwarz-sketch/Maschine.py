@@ -7,7 +7,7 @@ print("=========================================")
 verbindung = sqlite3.connect("speditions_tresor.db")
 cursor = verbindung.cursor()
 
-cursor.execute("SELECT COUNT(*) FROM lkw_flotte")
+cursor.execute("SELECT COUNT(*) FROM fleet_trucks")
 
 ergebnis = cursor.fetchone()
 
