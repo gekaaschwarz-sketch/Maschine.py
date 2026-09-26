@@ -9,7 +9,7 @@ with sqlite3.connect("speditions_tresor.db") as verbindung:
 
     print("\n⚡️ Starte Sicherheits-Scan des Abfragepfads...")
     try:
-        cursor.execute("EXPLAIN QUERY PLAN SELECT * FROM lkw_flotte;")
+        cursor.execute("EXPLAIN QUERY PLAN SELECT * FROM fleet_trucks;")
         abfrage_plan = cursor.fetchall()
 
         scan_erkannt = False
