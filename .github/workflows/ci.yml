@@ -1,0 +1,57 @@
+name: CI - Python checks & tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Syntax check, unit tests, regression grep
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies (none required by default)
+        run: |
+          python -V
+
+      - name: Python syntax check (py_compile)
+        run: |
+          set -euo pipefail
+          files="$(git ls-files '*.py')"
+          if [ -z "$files" ]; then
+            echo "No Python files found, skipping py_compile."
+          else
+            echo "Running py_compile on: $files"
+            python -m py_compile $files
+          fi
+
+      - name: Run unit tests
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p "*test*" -v
+
+      - name: Regression check — ensure no remaining 'lkw_flotte' references (exclude historical scripts)
+        run: |
+          set -euo pipefail
+          matches="$(grep -RIl "lkw_flotte" --include="*.py" --exclude-dir=08_wartung . || true)"
+          if [ -n "$matches" ]; then
+            echo "ERROR: Found remaining 'lkw_flotte' references in the repository:"
+            echo "$matches"
+            exit 1
+          else
+            echo "No 'lkw_flotte' references found (excluding 08_wartung)."
+          fi
+
+      - name: Success
+        if: success()
+        run: echo "CI checks passed."
