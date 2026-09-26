@@ -27,13 +27,8 @@ jobs:
       - name: Python syntax check (py_compile)
         run: |
           set -euo pipefail
-          files="$(git ls-files '*.py')"
-          if [ -z "$files" ]; then
-            echo "No Python files found, skipping py_compile."
-          else
-            echo "Running py_compile on: $files"
-            python -m py_compile $files
-          fi
+          echo "Running py_compile on all tracked .py files..."
+          git ls-files -z '*.py' | xargs -r -0 python -m py_compile
 
       - name: Run unit tests
         run: |
