@@ -18,7 +18,7 @@ Dieses Dokument wurde vollautomatisch generiert.
 | `01_grundlagen/012_super_manager.py` | 1. AUTOMATISCH LADEN |
 | `01_grundlagen/013_funktionen.py` | Definiert eine Begruessungsfunktion, die den eingegebenen Namen anspricht |
 | `01_grundlagen/014_modular.py` | Definiert eine Funktion, die den LKW-Ladungsstatus formatiert anzeigt |
-| `01_grundlagen/015_sicher_löschen.py` | Loescht ein Gut aus der Fracht erst nach expliziter Bestaetigung durch den Nutzer |
+| `01_grundlagen/015_sicher_loeschen.py` | Loescht ein Gut aus der Fracht erst nach expliziter Bestaetigung durch den Nutzer |
 | `01_grundlagen/016_suche.py` | Sucht ein Gut in der Frachtliste und gibt dessen Position aus, falls vorhanden |
 | `01_grundlagen/017_gewichte.py` | Sucht ein Gut in der Liste und gibt das zugehoerige Gewicht ueber den gemeinsamen Index aus |
 | `01_grundlagen/018_warnung.py` | Prueft das Gewicht eines Gutes und warnt, wenn es die 1000-kg-Grenze |
