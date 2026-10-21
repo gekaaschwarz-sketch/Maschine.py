@@ -1,4 +1,3 @@
-
 # Tests fuer das Hauptprogramm 193_hauptprogramm_flotte.py
 
 import contextlib
@@ -219,6 +218,96 @@ class TestHauptprogrammFlotte194(unittest.TestCase):
             self.module_path, ["4"], self.db_path
         )
         self.assertIn("Auf Wiedersehen!", out)
+        self.assertEqual(ret, 0)
+
+    def test_13_leere_id_abbruch(self):
+        with sqlite3.connect(self.db_path) as conn:
+            before = conn.execute("SELECT COUNT(*) FROM fleet_trucks").fetchone()[0]
+
+        ret, out = run_main_with_inputs(
+            self.module_path,
+            ["2", "", "4"],
+            self.db_path,
+        )
+        self.assertIn("Ungueltige ID: darf nicht leer sein. Vorgang abgebrochen.", out)
+        with sqlite3.connect(self.db_path) as conn:
+            after = conn.execute("SELECT COUNT(*) FROM fleet_trucks").fetchone()[0]
+        self.assertEqual(before, after)
+        self.assertEqual(ret, 0)
+
+    def test_14_id_nur_leerzeichen_abbruch(self):
+        with sqlite3.connect(self.db_path) as conn:
+            before = conn.execute("SELECT COUNT(*) FROM fleet_trucks").fetchone()[0]
+
+        ret, out = run_main_with_inputs(
+            self.module_path,
+            ["2", "   ", "4"],
+            self.db_path,
+        )
+        self.assertIn("Ungueltige ID: darf nicht leer sein. Vorgang abgebrochen.", out)
+        with sqlite3.connect(self.db_path) as conn:
+            after = conn.execute("SELECT COUNT(*) FROM fleet_trucks").fetchone()[0]
+        self.assertEqual(before, after)
+        self.assertEqual(ret, 0)
+
+    def test_15_leere_fahrer_in_abbruch(self):
+        ret, out = run_main_with_inputs(
+            self.module_path,
+            ["2", "TEST-03", "", "4"],
+            self.db_path,
+        )
+        self.assertIn("Ungueltige Fahrer_in: darf nicht leer sein. Vorgang abgebrochen.", out)
+        with sqlite3.connect(self.db_path) as conn:
+            row = conn.execute(
+                "SELECT COUNT(*) FROM fleet_trucks WHERE id = ?",
+                ("TEST-03",),
+            ).fetchone()
+        self.assertEqual(row[0], 0)
+        self.assertEqual(ret, 0)
+
+    def test_16_negative_last_beim_hinzufuegen(self):
+        ret, out = run_main_with_inputs(
+            self.module_path,
+            ["2", "TEST-04", "Tester", "-5", "4"],
+            self.db_path,
+        )
+        self.assertIn("Ungueltige Last: darf nicht negativ sein. Vorgang abgebrochen.", out)
+        with sqlite3.connect(self.db_path) as conn:
+            row = conn.execute(
+                "SELECT COUNT(*) FROM fleet_trucks WHERE id = ?",
+                ("TEST-04",),
+            ).fetchone()
+        self.assertEqual(row[0], 0)
+        self.assertEqual(ret, 0)
+
+    def test_17_last_zero_erlaubt(self):
+        ret, out = run_main_with_inputs(
+            self.module_path,
+            ["2", "TEST-05", "Tester", "0", "4"],
+            self.db_path,
+        )
+        self.assertIn("LKW TEST-05 erfolgreich hinzugefuegt.", out)
+        with sqlite3.connect(self.db_path) as conn:
+            row = conn.execute(
+                "SELECT COUNT(*) FROM fleet_trucks WHERE id = ?",
+                ("TEST-05",),
+            ).fetchone()
+        self.assertEqual(row[0], 1)
+        self.assertEqual(ret, 0)
+
+    def test_18_negative_last_bei_update(self):
+        ret, out = run_main_with_inputs(
+            self.module_path,
+            ["5", "HH-01", "-5", "4"],
+            self.db_path,
+        )
+        self.assertIn("Ungueltige Last: darf nicht negativ sein. Vorgang abgebrochen.", out)
+        with sqlite3.connect(self.db_path) as conn:
+            row = conn.execute(
+                "SELECT last FROM fleet_trucks WHERE id = ?",
+                ("HH-01",),
+            ).fetchone()
+        self.assertEqual(row[0], 2000)
         self.assertEqual(ret, 0)
 
 

@@ -40,13 +40,26 @@ def main(db_pfad: str = DB_PATH) -> int:
         elif auswahl == "2":
             # Hinzufuegen mit Zahlpruefung fuer last
             print("\n--- LKW HINZUFUEGEN ---")
+
             neue_id = input("Gib die neue LKW-ID ein: ").strip()
+            if not neue_id:
+                print("Ungueltige ID: darf nicht leer sein. Vorgang abgebrochen.")
+                continue
+
             neuer_fahrer = input("Gib den Namen der Fahrer_in ein: ").strip()
+            if not neuer_fahrer:
+                print("Ungueltige Fahrer_in: darf nicht leer sein. Vorgang abgebrochen.")
+                continue
+
             last_str = input("Wie viele kg Last hat der LKW? ").strip()
             try:
                 neue_last = int(last_str)
             except ValueError:
                 print("Ungueltige Zahl fuer Last. Vorgang abgebrochen.")
+                continue
+
+            if neue_last < 0:
+                print("Ungueltige Last: darf nicht negativ sein. Vorgang abgebrochen.")
                 continue
 
             try:
@@ -95,6 +108,10 @@ def main(db_pfad: str = DB_PATH) -> int:
                 neue_last = int(last_str)
             except ValueError:
                 print("Ungueltige Zahl fuer Last. Vorgang abgebrochen.")
+                continue
+
+            if neue_last < 0:
+                print("Ungueltige Last: darf nicht negativ sein. Vorgang abgebrochen.")
                 continue
 
             try:
