@@ -310,6 +310,21 @@ class TestHauptprogrammFlotte194(unittest.TestCase):
         self.assertEqual(row[0], 2000)
         self.assertEqual(ret, 0)
 
+    def test_19_last_ungueltige_zahl_bei_update(self):
+        ret, out = run_main_with_inputs(
+            self.module_path,
+            ["5", "HH-01", "abc", "4"],
+            self.db_path,
+        )
+        self.assertIn("Ungueltige Zahl fuer Last. Vorgang abgebrochen.", out)
+        with sqlite3.connect(self.db_path) as conn:
+            row = conn.execute(
+                "SELECT last FROM fleet_trucks WHERE id = ?",
+                ("HH-01",),
+            ).fetchone()
+        self.assertEqual(row[0], 2000)
+        self.assertEqual(ret, 0)
+
 
 if __name__ == "__main__":
     unittest.main()
