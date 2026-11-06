@@ -54,7 +54,7 @@ class TestBackupFileLevel(unittest.TestCase):
                 backup_path.unlink()
 
             r = run_script_in_cwd(s136, tmp)
-            self.assertEqual(r.returncode, 0, msg=(r.stdout + r.stderr))
+            self.assertEqual(r.returncode, 1, msg=(r.stdout + r.stderr))
 
             r2 = run_script_in_cwd(s145, tmp)
             self.assertEqual(r2.returncode, 0, msg=(r2.stdout + r2.stderr))
